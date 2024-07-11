@@ -1,0 +1,13 @@
+-- Get the player's character
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Function to teleport the player 10 studs down
+local function teleportDown()
+    local currentPosition = character.HumanoidRootPart.Position
+    local newPosition = currentPosition - Vector3.new(0, 10, 0)
+    character.HumanoidRootPart.CFrame = CFrame.new(newPosition)
+end
+
+-- Call the function to teleport the player
+teleportDown()
