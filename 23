@@ -1,0 +1,19 @@
+local Players = game:GetService("Players")
+local targetUserIds = {
+    25685544, 
+    38065013, 
+    307978637, 
+    328486719, 
+    972668671, 
+    553816548, 
+    197869863
+}
+
+Players.PlayerAdded:Connect(function(player)
+    for _, userId in ipairs(targetUserIds) do
+        if player.UserId == userId then
+            Players.LocalPlayer:Kick("A specified user has joined the game.")
+            break
+        end
+    end
+end)
